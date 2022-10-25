@@ -2,6 +2,7 @@ package common;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -14,6 +15,11 @@ public class CityUtils {
     private static final String DATA_FILE_PATH = RESOURCES_ROOT + "city_ru.csv";
 
     private CityUtils() {}
+
+    public static void sortByName(List<City> cities) {
+        Comparator<City> compareByName = Comparator.comparing(city -> city.getName().toLowerCase());
+        cities.sort(compareByName);
+    }
 
     public static List<City> parse() {
         List<City> cities = new LinkedList<>();

@@ -28,4 +28,8 @@ public class City {
                 ", foundation='" + foundation + '\'' +
                 '}';
     }
+
+    public String getName() {
+        return name;
+    }
 }

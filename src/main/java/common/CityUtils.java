@@ -16,7 +16,7 @@ public class CityUtils {
 
     private CityUtils() {}
 
-    public static void sortByName(List<City> cities) {
+    public static void sortByNameIgnoreCase(List<City> cities) {
         Comparator<City> compareByName = Comparator.comparing(city -> city.getName().toLowerCase());
         cities.sort(compareByName);
     }

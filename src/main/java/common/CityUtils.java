@@ -17,14 +17,11 @@ public class CityUtils {
     private CityUtils() {}
 
     public static void sortByNameIgnoreCase(List<City> cities) {
-        Comparator<City> compareByName = Comparator.comparing(city -> city.getName().toLowerCase());
-        cities.sort(compareByName);
+        cities.sort((city1, city2) -> city1.getName().compareToIgnoreCase(city2.getName()));
     }
 
     public static void sortByDistrictAndName(List<City> cities) {
-        Comparator<City> compareByDistrict = Comparator.comparing(city -> city.getDistrict().toLowerCase());
-        Comparator<City> compareByName = Comparator.comparing(City::getName);
-        cities.sort(compareByDistrict.thenComparing(compareByName));
+        cities.sort(Comparator.comparing(City::getDistrict).thenComparing(City::getName));
     }
 
     public static List<City> parse() {

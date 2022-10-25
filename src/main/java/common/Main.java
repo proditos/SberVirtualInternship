@@ -9,7 +9,7 @@ import static common.CityUtils.*;
 public class Main {
     public static void main(String[] args) {
         List<City> cities = parse();
-        sortByName(cities);
+        sortByDistrictAndName(cities);
         print(cities);
     }
 }

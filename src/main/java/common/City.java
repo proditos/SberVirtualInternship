@@ -32,4 +32,8 @@ public class City {
     public String getName() {
         return name;
     }
+
+    public String getDistrict() {
+        return district;
+    }
 }

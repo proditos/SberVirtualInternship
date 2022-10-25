@@ -21,6 +21,12 @@ public class CityUtils {
         cities.sort(compareByName);
     }
 
+    public static void sortByDistrictAndName(List<City> cities) {
+        Comparator<City> compareByDistrict = Comparator.comparing(city -> city.getDistrict().toLowerCase());
+        Comparator<City> compareByName = Comparator.comparing(City::getName);
+        cities.sort(compareByDistrict.thenComparing(compareByName));
+    }
+
     public static List<City> parse() {
         List<City> cities = new LinkedList<>();
         try (Scanner scanner = new Scanner(new File(DATA_FILE_PATH))) {

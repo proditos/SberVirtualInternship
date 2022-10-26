@@ -25,7 +25,7 @@ public class CityUtils {
                 maxAt = i;
             }
         }
-        System.out.printf("[%d] = %d\n", maxAt, array[maxAt].getPopulation());
+        System.out.printf("[%d] = %d%n", maxAt, array[maxAt].getPopulation());
     }
 
     public static void sortByNameIgnoreCase(List<City> cities) {

@@ -15,7 +15,7 @@ public class Main {
         System.out.println("[" + maxAt + "] = " + max);
     }
 
-    public static int getIndexOfMax(int[] array) {
+    private static int getIndexOfMax(int[] array) {
         if (array.length == 0)
             return -1;
         int maxAt = 0;

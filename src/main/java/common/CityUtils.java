@@ -2,7 +2,6 @@ package common;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.text.MessageFormat;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
@@ -20,15 +19,13 @@ public class CityUtils {
     public static void findMaxPopulationAndPrint(List<City> cities) {
         City[] array = new City[cities.size()];
         cities.toArray(array);
-        City current = array[0];
         int maxAt = 0;
         for (int i = 1; i < array.length; i++) {
-            if (array[i].getPopulation() > current.getPopulation()) {
-                current = array[i];
+            if (array[i].getPopulation() > array[maxAt].getPopulation()) {
                 maxAt = i;
             }
         }
-        System.out.println(MessageFormat.format("[{0}] = {1}", maxAt, array[maxAt].getPopulation()));
+        System.out.printf("[%d] = %d\n", maxAt, array[maxAt].getPopulation());
     }
 
     public static void sortByNameIgnoreCase(List<City> cities) {

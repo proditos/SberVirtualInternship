@@ -16,6 +16,14 @@ public class CityUtils {
 
     private CityUtils() {}
 
+    public static int[] getPopulations(List<City> cities) {
+        int[] populations = new int[cities.size()];
+        for (int i = 0; i < cities.size(); i++) {
+            populations[i] = cities.get(i).getPopulation();
+        }
+        return populations;
+    }
+
     public static void sortByNameIgnoreCase(List<City> cities) {
         cities.sort((city1, city2) -> city1.getName().compareToIgnoreCase(city2.getName()));
     }

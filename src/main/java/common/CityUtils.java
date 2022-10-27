@@ -2,10 +2,7 @@ package common;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * @author Vladislav Konovalov
@@ -26,6 +23,21 @@ public class CityUtils {
             }
         }
         System.out.printf("[%d] = %d%n", maxAt, array[maxAt].getPopulation());
+    }
+
+    public static void countAndPrintCitiesByRegion(List<City> cities) {
+        Map<String, Integer> regionMap = new HashMap<>();
+        for (City city : cities) {
+            String region = city.getRegion();
+            if (regionMap.containsKey(region)) {
+                int counter = regionMap.get(region);
+                regionMap.put(region, counter + 1);
+            } else {
+                regionMap.put(region, 1);
+            }
+        }
+
+        regionMap.forEach((region, counter) -> System.out.printf("%s - %d%n", region, counter));
     }
 
     public static void sortByNameIgnoreCase(List<City> cities) {
